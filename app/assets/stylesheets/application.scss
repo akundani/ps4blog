@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+
+ //  Optional Theme
+ @import "bootswatch/flatly/variables";
+//
+
+ @import "bootstrap";
+
+ // Optional Theme as well
+    @import "bootswatch/flatly/bootswatch";
+//
+
+ @import "font-awesome";

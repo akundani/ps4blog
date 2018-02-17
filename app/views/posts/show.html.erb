@@ -1,4 +1,7 @@
 <h1><%= @post.title %></h1>
+<% if current_user.present? %>
+  <a class="btn btn-primary" href="<%= edit_post_path(@post) %>">Edit</a>
+<% end %>
 <p><%= @post.pretty_word_count %></p>
 
 <br>

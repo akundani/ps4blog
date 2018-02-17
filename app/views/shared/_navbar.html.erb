@@ -1,12 +1,21 @@
-<header> class="navbar">
-    <a href="/" class="nav-brand">Blog</a>
-
-    <nav class="navbar-nav">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="/" class="navbar-brand">Blog</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
         <li>
-                <a href="/">Home</a>
-            <li>
-            </li>
-                <a href="<%= new_post_path %>">Write a Post </a>
-            </li>
-    </nav>
-</header>
+          <a href="<%= new_post_path %>">Write a Post </a>
+        </li>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </li><!-- true -->
+      <% else %>
+        <li>
+          <a href="<%= new_user_session_path %> ">Sign In </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
